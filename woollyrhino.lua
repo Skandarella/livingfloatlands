@@ -30,7 +30,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
         jump_height = 6,
 	stepheight = 1,
 	drops = {
-		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
+		{name = "livingfloatlands:largemammalraw", chance = 1, min = 1, max = 1},
 	},
 	water_damage = 0,
 	lava_damage = 4,

@@ -28,7 +28,7 @@ mobs:register_mob("livingfloatlands:deinotherium", {
         jump_height = 6,
 	stepheight = 1,
 	drops = {
-		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
+		{name = "livingfloatlands:largemammalraw", chance = 1, min = 1, max = 1},
 	},
 	water_damage = 0,
 	lava_damage = 4,
@@ -83,3 +83,29 @@ mobs:spawn({
 end
 
 mobs:register_egg("livingfloatlands:deinotherium", ("Deinotherium"), "adeinotherium.png")
+
+
+-- raw Ornithischia
+minetest.register_craftitem(":livingfloatlands:largemammalraw", {
+	description = ("Raw meat of a large Mammal"),
+	inventory_image = "livingfloatlands_largemammalraw.png",
+	on_use = minetest.item_eat(3),
+	groups = {food_meat_raw = 1, flammable = 2},
+})
+
+-- cooked Ornithischia
+minetest.register_craftitem(":livingfloatlands:largemammalcooked", {
+	description = ("Cooked meat of a large Mammal"),
+	inventory_image = "livingfloatlands_largemammalcooked.png",
+	on_use = minetest.item_eat(5),
+	groups = {food_meat = 1, flammable = 2},
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "livingfloatlands:largemammalcooked",
+	recipe = "livingfloatlands:largemammalraw",
+	cooktime = 40,
+})
+
+

@@ -39,6 +39,7 @@ dofile(path .. "lycaenops.lua") --
 dofile(path .. "tyrannosaurus.lua") -- 
 dofile(path .. "cavebear.lua") -- 
 dofile(path .. "rhamphorhynchus.lua") -- 
+dofile(path .. "hunger.lua") -- 
 
 
 
