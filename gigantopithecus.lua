@@ -73,7 +73,6 @@ if not mobs.custom_spawn_animal then
 mobs:spawn({
 	name = "livingfloatlands:gigantopithecus",
 	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter"},
-	neighbors = spawn_by,
 	min_light = 0,
 	interval = 60,
 	active_object_count = 3,

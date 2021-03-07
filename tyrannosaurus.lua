@@ -8,7 +8,7 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 	hp_min = 300,
 	hp_max = 550,
 	armor = 100,
-	collisionbox = {-1.5, -0.01, -1.5, 1.5, 3.6, 2.5},
+	collisionbox = {-1.2, -0.01, -1.0, 1.2, 1.5, 1.0},
 	visual = "mesh",
 	mesh = "Tyrannosaurus.b3d",
 	visual_size = {x = 1.0, y = 1.0},
@@ -34,7 +34,7 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 2,
+	fear_height = 3,
         pathfinding = true,
 	animation = {
 		speed_normal = 30,

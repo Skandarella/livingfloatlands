@@ -9,7 +9,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 	hp_min = 100,
 	hp_max = 180,
 	armor = 100,
-	collisionbox = {-1.2, -0.01, -1.2, 1.2, 1.5, 1.2},
+	collisionbox = {-1.2, -0.01, -0.8, 1, 1.5, 0.8},
 	visual = "mesh",
 	mesh = "Mammooth.b3d",
 	visual_size = {x = 1.0, y = 1.0},
@@ -34,7 +34,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 2,
+	fear_height = 3,
         pathfinding = true,
 	animation = {
 		speed_normal = 70,

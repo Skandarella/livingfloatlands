@@ -8,7 +8,7 @@ mobs:register_mob("livingfloatlands:deinotherium", {
 	hp_min = 175,
 	hp_max = 320,
 	armor = 100,
-	collisionbox = {-2, -0.01, -2, 1, 2, 1},
+	collisionbox = {-2, -0.01, -1, 1, 1.7, 1},
 	visual = "mesh",
 	mesh = "Deinotherium.b3d",
 	visual_size = {x = 1.0, y = 1.0},
@@ -33,7 +33,7 @@ mobs:register_mob("livingfloatlands:deinotherium", {
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 2,
+	fear_height = 3,
         pathfinding = true,
 	animation = {
 		speed_normal = 70,

@@ -22,7 +22,7 @@ mobs:register_mob("livingfloatlands:wildhorse", {
 	makes_footstep_sound = true,
 	walk_velocity = 2,
 	run_velocity = 4,
-        walk_chance = 10,
+        walk_chance = 20,
 	runaway = true,
         runaway_from = {"animalworld:bear", "animalworld:crocodile", "animalworld:tiger", "animalworld:spider", "animalworld:spidermale", "animalworld:shark", "animalworld:hyena", "animalworld:kobra", "animalworld:monitor", "animalworld:snowleopard", "animalworld:volverine", "livingfloatlands:deinotherium", "livingfloatlands:carnotaurus", "livingfloatlands:lycaenops", "livingfloatlands:smilodon", "livingfloatlands:tyrannosaurus", "livingfloatlands:velociraptor"},
 	jump = true,
@@ -34,7 +34,7 @@ mobs:register_mob("livingfloatlands:wildhorse", {
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 2,
+	fear_height = 3,
 	animation = {
 		speed_normal = 50,
 		stand_start = 0,

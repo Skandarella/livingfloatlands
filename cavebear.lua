@@ -8,7 +8,7 @@ mobs:register_mob("livingfloatlands:cavebear", {
 	hp_min = 95,
 	hp_max = 120,
 	armor = 100,
-	collisionbox = {-0.6, -0.01, -0.6, 0.6, 1.5, 0.6},
+	collisionbox = {-0.6, -0.01, -0.6, 1, 1.5, 0.6},
 	visual = "mesh",
 	mesh = "Cavebear.b3d",
 	visual_size = {x = 1.0, y = 1.0},

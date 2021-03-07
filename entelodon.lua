@@ -33,7 +33,7 @@ mobs:register_mob("livingfloatlands:entelodon", {
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 2,
+	fear_height = 3,
         pathfinding = true,
 	animation = {
 		speed_normal = 50,
