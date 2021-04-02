@@ -68,7 +68,7 @@ if minetest.get_modpath("ethereal") then
 	spawn_on = {"ethereal:prairie_dirt", "ethereal:grove_dirt", "default:dirt_with_grass"}
 end
 
-if not mobs.custom_spawn_animal then
+if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:deinotherium",
 	nodes = {"default:dirt_with_grass"},

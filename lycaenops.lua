@@ -66,7 +66,7 @@ if minetest.get_modpath("ethereal") then
 	spawn_on = {"ethereal:gray_dirt", "dry:dry_dirt", "default:dirt_with_grass", "default:dry_dirt_with_dry_grass", "default:dirt_with_coniferous_litter"}
 end
 
-if not mobs.custom_spawn_monster then
+if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:lycaenops",
 	nodes = {"default:dirt_with_grass", "default:dry_dirt_with_dry_grass", "default:dirt_with_coniferous_litter"},

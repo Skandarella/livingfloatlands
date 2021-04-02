@@ -69,7 +69,7 @@ if minetest.get_modpath("ethereal") then
 	spawn_on = {"ethereal:crystal_dirt", "ethereal:gray_dirt", "default:permafrost_with_moss", "default:dirt_with_snow", "default:snow"}
 end
 
-if not mobs.custom_spawn_animal then
+if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:mammooth",
 	nodes = {"default:permafrost_with_moss", "default:dirt_with_snow", "default:snow"},

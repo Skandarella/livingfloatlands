@@ -77,7 +77,7 @@ if minetest.get_modpath("ethereal") then
 	spawn_on = {"ethereal:grove_dirt", "ethereal:bamboo_dirt", "default:dirt_with_rainforest_litter"}
 end
 
-if not mobs.custom_spawn_animal then
+if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:gastornis",
 	nodes = {"default:dirt_with_rainforest_litter"},

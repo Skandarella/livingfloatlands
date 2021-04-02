@@ -66,7 +66,7 @@ if minetest.get_modpath("ethereal") then
 
 end
 
-if not mobs.custom_spawn_animal then
+if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:ankylosaurus",
 	nodes = {"default:sand", "default:desert_sandstone", "default:sandstone", "default:dry_dirt_with_dry_grass"},
