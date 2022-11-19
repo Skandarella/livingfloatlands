@@ -67,13 +67,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:smilodon",
-	nodes = {"default:permafrost_with_moss", "default:dirt_with_snow", "default:snow"},
+	nodes = {"livingfloatlands:coldsteppe_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
-	active_object_count = 3,
-	min_height = 1000,
-	max_height = 5000,
+	active_object_count = 1,
+	min_height = 6,
+	max_height = 31000,
 
 })
 end

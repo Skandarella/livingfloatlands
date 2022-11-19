@@ -14,6 +14,7 @@ mobs:register_mob("livingfloatlands:parasaurolophus", {
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"textureparasaurolophus.png"},
+		{"textureparasaurolophus2.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_parasaurolophus",
@@ -28,7 +29,7 @@ mobs:register_mob("livingfloatlands:parasaurolophus", {
         runaway_from = {"animalworld:bear", "animalworld:crocodile", "animalworld:tiger", "animalworld:spider", "animalworld:spidermale", "animalworld:shark", "animalworld:hyena", "animalworld:kobra", "animalworld:monitor", "animalworld:snowleopard", "animalworld:volverine", "livingfloatlands:deinotherium", "livingfloatlands:carnotaurus", "livingfloatlands:lycaenops", "livingfloatlands:smilodon", "livingfloatlands:tyrannosaurus", "livingfloatlands:velociraptor"},
 	jump = false,
         jump_height = 6,
-	stepheight = 1,
+	stepheight = 2,
 	drops = {
 		{name = "livingfloatlands:ornithischiaraw", chance = 1, min = 1, max = 1},
 	},
@@ -48,7 +49,7 @@ mobs:register_mob("livingfloatlands:parasaurolophus", {
 	},
 
 	follow = {
-		"default:dry_shrub ", "default:grass_1", "ethereal:dry_shrub", "farming:seed_wheat", "farming:seed_rye", "default:junglegrass", "default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice"
+		"default:dry_shrub ", "default:grass_1", "ethereal:dry_shrub", "farming:seed_wheat", "farming:seed_rye", "default:junglegrass", "default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut", "livingfloatlands:paleojungle_ferngrass"
 	},
 	view_range = 20,
 
@@ -69,13 +70,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:parasaurolophus",
-	nodes = {"default:dirt_with_coniferous_litter"},
+	nodes = {"livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
-	active_object_count = 3,
+	active_object_count = 2,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 0,
+	max_height = 31000,
 
 })
 end

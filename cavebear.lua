@@ -48,7 +48,7 @@ mobs:register_mob("livingfloatlands:cavebear", {
 
 	follow = {
 		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical",
-		"mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "default:apple", "farming:potato", "ethereal:banana_bread", "farming:melon_slice", "farming:carrot", "farming:seed_rice", "farming:corn", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw"
+		"mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "default:apple", "farming:potato", "ethereal:banana_bread", "farming:melon_slice", "farming:carrot", "farming:seed_rice", "farming:corn", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw", "livingfloatlands:roasted_pine_nuts", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling", "livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root" 
 	},
 	view_range = 10,
 
@@ -63,19 +63,19 @@ mobs:register_mob("livingfloatlands:cavebear", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = {"ethereal:gray_dirt", "ethereal:crystal_dirt", "default:permafrost_with_moss", "default:dirt_with_snow", "default:dirt_with_coniferous_litter"}
+	spawn_on = {"default:dirt_with_coniferous_litter"}
 end
 
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:smilodon",
-	nodes = {"default:permafrost_with_moss", "default:dirt_with_snow", "default:dirt_with_coniferous_litter"},
+	nodes = {"livingfloatlands:coldsteppe_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
 	active_object_count = 1,
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 5,
+	max_height = 31000,
 
 })
 end

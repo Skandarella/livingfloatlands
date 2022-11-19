@@ -55,7 +55,7 @@ stepheight = 2,
 		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical",
 		"mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw"
 	},
-	view_range = 15,
+	view_range = 10,
 
 	on_rightclick = function(self, clicker)
 
@@ -74,13 +74,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:velociraptor",
-	nodes = {"default:desert_sand", "default:desert_sandstone", "default:sandstone"},
+	nodes = {"livingfloatlands:paleodesert_litter"},
 	min_light = 0,
 	interval = 60,
-	active_object_count = 3,
+	active_object_count = 2,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 0,
+	max_height = 31000,
 
 })
 end

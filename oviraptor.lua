@@ -4,6 +4,7 @@ stepheight = 2,
 	passive = false,
         attack_type = "dogfight",
 	attack_animals = false,
+        attack_monsters = true,
 	reach = 2,
         damage = 6,
 	hp_min = 30,
@@ -51,7 +52,7 @@ stepheight = 2,
 	},
 
 	follow = {
-		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical", "mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "default:apple", "farming:potato", "farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw"
+		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical", "mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "default:apple", "farming:potato", "farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw", "livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern"
 	},
 	view_range = 15,
 
@@ -72,13 +73,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:oviraptor",
-	nodes = {"default:desert_sand", "default:desert_sandstone", "default:sandstone"},
+	nodes = {"livingfloatlands:paleodesert_litter"},
 	min_light = 0,
 	interval = 60,
 	active_object_count = 3,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 1,
+	max_height = 31000,
 
 })
 end

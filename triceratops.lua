@@ -1,10 +1,11 @@
 mobs:register_mob("livingfloatlands:triceratops", {
-stepheight = 1,
+stepheight = 2,
 	type = "animal",
 	passive = false,
         attack_type = "dogfight",
 	attack_animals = false,
 	group_attack = true,
+        attack_monsters = true,
 	reach = 3,
         damage = 25,
 	hp_min = 250,
@@ -16,6 +17,7 @@ stepheight = 1,
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"texturetriceratops.png"},
+		{"texturetriceratops2.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_triceratops",
@@ -50,7 +52,7 @@ stepheight = 1,
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice"
+		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut", "livingfloatlands:paleojungle_ferngrass"
 	},
 	view_range = 10,
 	replace_rate = 10,
@@ -73,13 +75,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:triceratops",
-	nodes = {"default:dry_dirt_with_dry_grass"},
+	nodes = {"livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
-	active_object_count = 4,
-	min_height = 1000,
-	max_height = 5000,
+	active_object_count = 2,
+	min_height = 2,
+	max_height = 31000,
 	day_toggle = true,
 })
 end

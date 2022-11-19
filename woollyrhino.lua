@@ -3,6 +3,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 	passive = false,
         attack_type = "dogfight",
 	attack_animals = false,
+	attack_monsters = true,
 	group_attack = true,
 	reach = 3,
         damage = 14,
@@ -15,6 +16,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"texturewoollyrhino.png"},
+		{"texturewoollyrhino2.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_woollyrhino",
@@ -28,7 +30,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 	runaway = false,
 	jump = true,
         jump_height = 6,
-	stepheight = 1,
+	stepheight = 2,
 	drops = {
 		{name = "livingfloatlands:largemammalraw", chance = 1, min = 1, max = 1},
 	},
@@ -50,7 +52,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass"
+		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling", "livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root"
 	},
 	view_range = 10,
 	replace_rate = 10,
@@ -73,13 +75,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:woollyrhino",
-	nodes = {"default:permafrost_with_moss", "default:dirt_with_snow", "default:snow"},
+	nodes = {"livingfloatlands:coldsteppe_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
-	active_object_count = 4,
-	min_height = 1000,
-	max_height = 5000,
+	active_object_count = 2,
+	min_height = 3,
+	max_height = 31000,
 	day_toggle = true,
 })
 end

@@ -3,6 +3,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 	passive = false,
         attack_type = "dogfight",
 	attack_animals = false,
+	attack_monsters = true,
 	group_attack = true,
 	reach = 3,
         damage = 16,
@@ -15,6 +16,8 @@ mobs:register_mob("livingfloatlands:mammooth", {
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"texturemammooth.png"},
+		{"texturemammooth2.png"},
+		{"texturemammooth3.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_mammooth",
@@ -27,7 +30,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 	runaway = false,
 	jump = false,
         jump_height = 6,
-	stepheight = 1,
+	stepheight = 2,
 	drops = {
 		{name = "livingfloatlands:largemammalraw", chance = 1, min = 1, max = 1},
 	},
@@ -49,7 +52,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice"
+		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling", "livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root"
 	},
 	view_range = 12,
 	replace_rate = 10,
@@ -72,13 +75,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:mammooth",
-	nodes = {"default:permafrost_with_moss", "default:dirt_with_snow", "default:snow"},
+	nodes = {"livingfloatlands:coldsteppe_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
 	active_object_count = 4,
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 5,
+	max_height = 31000,
 	day_toggle = true,
 })
 end

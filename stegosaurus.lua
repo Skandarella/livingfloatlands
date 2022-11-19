@@ -4,6 +4,7 @@ mobs:register_mob("livingfloatlands:stegosaurus", {
         attack_type = "dogfight",
 	attack_animals = false,
 	group_attack = true,
+        attack_monsters = true,
 	reach = 5,
         damage = 16,
 	hp_min = 250,
@@ -15,6 +16,7 @@ mobs:register_mob("livingfloatlands:stegosaurus", {
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"texturestegosaurus.png"},
+		{"texturestegosaurus2.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_stegosaurus",
@@ -28,7 +30,7 @@ mobs:register_mob("livingfloatlands:stegosaurus", {
 	runaway = false,
 	jump = false,
         jump_height = 6,
-	stepheight = 1,
+	stepheight = 2,
 	drops = {
 		{name = "livingfloatlands:ornithischiaraw", chance = 1, min = 1, max = 1},
 	},
@@ -51,7 +53,7 @@ mobs:register_mob("livingfloatlands:stegosaurus", {
 	},
 
 	follow = {
-		"default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass"
+		"default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass", "livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut", "livingfloatlands:paleojungle_ferngrass"
 	},
 	view_range = 15,
 
@@ -72,13 +74,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:stegosaurus",
-	nodes = {"default:dirt_with_coniferous_litter", "default:dirt_with_grass", "default:dirt_with_rainforest_litter"},
+	nodes = {"livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
 	active_object_count = 2,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 0,
+	max_height = 31000,
 
 })
 end

@@ -69,12 +69,12 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:lycaenops",
-	nodes = {"default:dirt_with_grass", "default:dry_dirt_with_dry_grass", "default:dirt_with_coniferous_litter"},
+	nodes = {"livingfloatlands:giantforest_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 2,
+	max_height = 31000,
 
 })
 end

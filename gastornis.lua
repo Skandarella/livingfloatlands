@@ -1,9 +1,10 @@
 mobs:register_mob("livingfloatlands:gastornis", {
-stepheight = 1,
+stepheight = 2,
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
 	group_attack = true,
+        attack_monsters = true,
 	owner_loyal = true,
 	attack_npcs = false,
 	reach = 2,
@@ -59,7 +60,7 @@ stepheight = 1,
 	},
 	follow = {
 		"farming:seed_wheat", "farming:seed_cotton", "farming:seed_barley",
-		"farming:seed_oat", "farming:seed_rye", "mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw"
+		"farming:seed_oat", "farming:seed_rye", "mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw", "livingfloatlands:giantforest_oaknut"
 	},
 	view_range = 10,
 
@@ -80,13 +81,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:gastornis",
-	nodes = {"default:dirt_with_rainforest_litter"},
+	nodes = {"livingfloatlands:giantforest_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
 	active_object_count = 2,
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 5,
+	max_height = 31000,
 	day_toggle = true,
 })
 end

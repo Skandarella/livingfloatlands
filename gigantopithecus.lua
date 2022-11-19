@@ -4,6 +4,8 @@ mobs:register_mob("livingfloatlands:gigantopithecus", {
 	passive = false,
 	attack_type = "dogfight",
 	group_attack = true,
+	attack_animals = true,
+        attack_monsters = true,
 	owner_loyal = true,
 	reach = 3,
 	damage = 11,
@@ -29,7 +31,7 @@ mobs:register_mob("livingfloatlands:gigantopithecus", {
 	jump = false,
 	jump_height = 3,
 	pushable = true,
-	follow = {"default:apple", "farming:potato", "farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread", "ethereal:banana_single"},
+	follow = {"default:apple", "farming:potato", "farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread", "ethereal:banana_single", "livingfloatlands:giantforest_oaknut"},
 	view_range = 10,
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
@@ -72,13 +74,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:gigantopithecus",
-	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter"},
+	nodes = {"livingfloatlands:giantforest_litter"},
 	min_light = 0,
 	interval = 60,
-	active_object_count = 3,
+	active_object_count = 2,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 5,
+	max_height = 31000,
 })
 end
 

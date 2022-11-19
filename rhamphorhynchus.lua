@@ -75,13 +75,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:rhamphorhynchus",
-	nodes = {"default:dirt_with_rainforest_litter", "default:dirt_with_grass", "default:sand"},
+	nodes = {"livingfloatlands:giantforest_paleoredwood_wood", "livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
-	active_object_count = 4,
-	min_height = 1000,
-	max_height = 5000,
+	active_object_count = 2,
+	min_height = 2,
+	max_height = 31000,
 	day_toggle = true,
 })
 end

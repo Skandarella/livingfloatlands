@@ -1,5 +1,5 @@
 mobs:register_mob("livingfloatlands:nigersaurus", {
-stepheight = 1,
+stepheight = 2,
 	type = "animal",
 	passive = true,
         attack_type = "dogfight",
@@ -47,7 +47,7 @@ stepheight = 1,
 		-- 50-70 is slide/water idle
 	},
 
-	follow = {"default:dry_shrub ", "default:grass_1", "ethereal:dry_shrub", "farming:seed_wheat", "farming:seed_rye", "default:junglegrass", "default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice"},
+	follow = {"default:dry_shrub ", "default:grass_1", "ethereal:dry_shrub", "farming:seed_wheat", "farming:seed_rye", "default:junglegrass", "default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut", "livingfloatlands:paleojungle_ferngrass"},
 	view_range = 25,
 
 	on_rightclick = function(self, clicker)
@@ -67,13 +67,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:nigersaurus",
-	nodes = {"default:dirt_with_coniferous_litter"},
+	nodes = {"livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
-	active_object_count = 4,
+	active_object_count = 2,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 0,
+	max_height = 31000,
 
 })
 end

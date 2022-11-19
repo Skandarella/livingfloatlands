@@ -10,10 +10,11 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 	armor = 100,
 	collisionbox = {-1.2, -0.01, -0.9, 1.2, 1.5, 0.9},
 	visual = "mesh",
-	mesh = "Carnotaurus.b3d",
+	mesh = "Carnotaurus5.b3d",
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"texturecarnotaurus.png"},
+		{"texturecarnotaurus2.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_carnotaurus",
@@ -27,7 +28,7 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 	runaway = false,
 	jump = false,
         jump_height = 6,
-	stepheight = 1,
+	stepheight = 2,
 	drops = {
 		{name = "livingfloatlands:theropodraw", chance = 1, min = 1, max = 1},
 	},
@@ -40,6 +41,8 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 		speed_normal = 30,
 		stand_start = 250,
 		stand_end = 350,
+		stand1_start = 450,
+		stand1_end = 550,
 		walk_speed = 50,
 		walk_start = 0,
 		walk_end = 100,
@@ -75,13 +78,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:carnotaurus",
-	nodes = {"default:dry_dirt_with_dry_grass"},
+	nodes = {"livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
-	active_object_count = 2,
+	active_object_count = 1,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 0,
+	max_height = 31000,
 
 })
 end

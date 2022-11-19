@@ -3,6 +3,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 	passive = false,
         attack_type = "dogfight",
 	group_attack = true,
+        attack_monsters = true,
 	reach = 5,
         damage = 10,
 	hp_min = 650,
@@ -14,6 +15,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 	visual_size = {x = 1.0, y = 1.0},
 	textures = {
 		{"textureankylosaurus.png"},
+		{"textureankylosaurus2.png"},
 	},
 	sounds = {
 		random = "livingfloatlands_ankylosaurus",
@@ -27,7 +29,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 	runaway = false,
 	jump = false,
         jump_height = 6,
-	stepheight = 1,
+	stepheight = 2,
 	drops = {
 		{name = "livingfloatlands:ornithischiaraw", chance = 1, min = 1, max = 1},
 	},
@@ -48,7 +50,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 		-- 50-70 is slide/water idle
 	},
 
-follow = {"default:apple", "default:dry_dirt_with_dry_grass", "farming:seed_wheat", "default:junglegrass", "farming:seed_oat"},
+follow = {"default:apple", "default:dry_dirt_with_dry_grass", "farming:seed_wheat", "default:junglegrass", "farming:seed_oat", "livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern"},
 	view_range = 10,
 
 	on_rightclick = function(self, clicker)
@@ -69,13 +71,13 @@ end
 if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:ankylosaurus",
-	nodes = {"default:sand", "default:desert_sandstone", "default:sandstone", "default:dry_dirt_with_dry_grass"},
+	nodes = {"livingfloatlands:paleodesert_litter"},
 	min_light = 0,
 	interval = 60,
 	active_object_count = 2,
 	chance = 8000, -- 15000
-	min_height = 1000,
-	max_height = 5000,
+	min_height = 1,
+	max_height = 31000,
 
 })
 end
