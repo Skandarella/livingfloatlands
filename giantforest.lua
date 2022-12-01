@@ -27,7 +27,7 @@ minetest.register_biome({
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
     y_max = 31000,
-    y_min = 0,
+    y_min = 1000,
     heat_point = 52,
     humidity_point = 71,
 })
@@ -63,8 +63,8 @@ minetest.register_node("livingfloatlands:giantforest_litter_with_moss", {
 			octaves = 7,
 			persist = 1,
 		},
-		y_max = 3100,
-		y_min = 0,
+		y_max = 31000,
+		y_min = 1000,
 		decoration = "livingfloatlands:giantforest_litter_walkway"
 	})
 
@@ -82,8 +82,8 @@ minetest.register_node("livingfloatlands:giantforest_litter_with_moss", {
 			octaves = 8,
 			persist = 1,
 		},
-		y_max = 3100,
-		y_min = 0,
+		y_max = 31000,
+		y_min = 1000,
 		decoration = "livingfloatlands:giantforest_litter_with_moss"
 	})
 
@@ -124,7 +124,7 @@ minetest.register_node("livingfloatlands:giantforest_fern", {
 		},
 		biomes = {"livingfloatlands:giantforest", "livingfloatlands:coldgiantforest", "livingfloatlands:paleojungle"},
 		y_max = 31000,
-		y_min = 2,
+		y_min = 1000,
 		decoration = "livingfloatlands:giantforest_fern",
 		param2 = 4,
 	})
@@ -143,7 +143,7 @@ minetest.register_node("livingfloatlands:giantforest_fern", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:giantforest_grass",
         spawn_by = "livingfloatlands:giantforest_litter"
 	})
@@ -182,7 +182,7 @@ minetest.register_node("livingfloatlands:giantforest_grass", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:giantforest_grass2",
         spawn_by = "livingfloatlands:giantforest_litter"
 	})
@@ -221,7 +221,7 @@ minetest.register_node("livingfloatlands:giantforest_grass2", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:giantforest_grass3",
         spawn_by = "livingfloatlands:giantforest_litter"
 	})
@@ -325,7 +325,7 @@ end
 
 -- paleo oak trunk
 minetest.register_node("livingfloatlands:giantforest_paleooak_trunk", {
-	description = ("Joshua Trunk"),
+	description = ("Paleo Oak Trunk"),
 	tiles = {
 		"livingfloatlands_giantforest_paleooak_trunk_top.png",
 		"livingfloatlands_giantforest_paleooak_trunk_top.png",
@@ -486,7 +486,7 @@ minetest.register_decoration({
     fill_ratio = 0.00265,
     biomes = {"livingfloatlands:giantforest"},
     y_max = 31000,
-    y_min = 1,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleooak_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -501,7 +501,7 @@ minetest.register_decoration({
     fill_ratio = 0.00265,
     biomes = {"livingfloatlands:giantforest"},
     y_max = 31000,
-    y_min = 1,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleooak_tree2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -516,7 +516,7 @@ minetest.register_decoration({
     fill_ratio = 0.00265,
     biomes = {"livingfloatlands:giantforest"},
     y_max = 31000,
-    y_min = 1,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleooak_tree3.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -531,7 +531,7 @@ minetest.register_decoration({
     fill_ratio = 0.00025,
 		biomes = {"livingfloatlands:giantforest"},
 		y_max = 31000,
-		y_min = 2,
+		y_min = 1000,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_giantforest_rottenwood.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -548,7 +548,7 @@ minetest.register_decoration({
     fill_ratio = 0.00025,
 		biomes = {"livingfloatlands:giantforest"},
 		y_max = 31000,
-		y_min = 2,
+		y_min = 1000,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_giantforest_rottenwood4.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",

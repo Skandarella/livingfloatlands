@@ -27,7 +27,7 @@ minetest.register_biome({
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
     y_max = 31000,
-    y_min = 0,
+    y_min = 1000,
     heat_point = 38,
     humidity_point = 27,
 })
@@ -81,8 +81,8 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbous_chervil_root", {
 			octaves = 6,
 			persist = 1,
 		},
-		y_max = 3100,
-		y_min = 0,
+		y_max = 31000,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_bulbouschervil_block"
 	})
 
@@ -100,7 +100,7 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbous_chervil_root", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_bulbouschervil_plant",
         spawn_by = "livingfloatlands:coldsteppe_bulbouschervil_block"
 	})
@@ -139,7 +139,7 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbouschervil_plant", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_grass1",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
@@ -178,7 +178,7 @@ minetest.register_node("livingfloatlands:coldsteppe_grass1", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_grass2",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
@@ -217,7 +217,7 @@ minetest.register_node("livingfloatlands:coldsteppe_grass2", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_grass3",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
@@ -256,7 +256,7 @@ minetest.register_node("livingfloatlands:coldsteppe_grass3", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_grass4",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
@@ -295,7 +295,7 @@ minetest.register_node("livingfloatlands:coldsteppe_grass4", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 2,
+		y_min = 1000,
 		decoration = "livingfloatlands:coldsteppe_shrub",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
@@ -495,7 +495,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 3,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -510,7 +510,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 3,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine11.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -735,7 +735,7 @@ minetest.register_decoration({
     fill_ratio = 0.00017,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 3,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -750,7 +750,7 @@ minetest.register_decoration({
     fill_ratio = 0.00015,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 3,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine22.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -967,7 +967,7 @@ minetest.register_decoration({
     fill_ratio = 0.00057,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 3,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine3.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -982,7 +982,7 @@ minetest.register_decoration({
     fill_ratio = 0.00137,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 3,
+    y_min = 1000,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine33.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -1043,7 +1043,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -1059,7 +1059,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation11.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -1083,7 +1083,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock2", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation2.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -1099,7 +1099,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock2", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1,
+		y_min = 1000,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",

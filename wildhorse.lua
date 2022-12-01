@@ -49,7 +49,7 @@ mobs:register_mob("livingfloatlands:wildhorse", {
 	},
 
 	follow = {
-		"default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling", "livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root"
+		"default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling", "livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root", "livingdesert:coldsteppe_grass1"
 	},
 	view_range = 15,
 
@@ -75,7 +75,7 @@ mobs:spawn({
 	interval = 60,
 	active_object_count = 4,
 	chance = 8000, -- 15000
-	min_height = 5,
+	min_height = 1000,
 	max_height = 31000,
 
 })

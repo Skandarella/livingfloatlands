@@ -73,7 +73,7 @@ mobs:spawn({
 	min_light = 0,
 	interval = 60,
 	chance = 8000, -- 15000
-	min_height = 2,
+	min_height = 1000,
 	max_height = 31000,
 
 })

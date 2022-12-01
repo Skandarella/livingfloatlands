@@ -67,6 +67,7 @@ dofile(path .. "paleodesert.lua") --
 dofile(path .. "giantforest.lua") -- 
 dofile(path .. "coldgiantforest.lua") -- 
 dofile(path .. "paleojungle.lua") -- 
+dofile(path .. "dye.lua") -- 
 dofile(path .. "leafdecay.lua") -- 
 dofile(path .. "hunger.lua") -- 
 
