@@ -1112,7 +1112,7 @@ walls.register(":livingfloatlands:coldsteppe_brick_wall", "Coldsteppe Granite Br
 
     stairs.register_stair_and_slab(
       "livingfloatlands_coldsteppe_rock_brick",
-      "livingfloatlands:coldsteppe_brick",
+      "livingfloatlands:coldsteppe_rock_brick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingfloatlands_coldsteppe_rock_brick.png"},
       ("Coldsteppe Granite Brick Stair"),
@@ -1151,7 +1151,7 @@ walls.register(":livingfloatlands:coldsteppe_brick2_wall", "Coldsteppe Limestone
 
     stairs.register_stair_and_slab(
       "livingfloatlands_coldsteppe_rock2_brick",
-      "livingfloatlands:coldsteppe_brick2",
+      "livingfloatlands:coldsteppe_rock2_brick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingfloatlands_coldsteppe_rock2_brick.png"},
       ("Coldsteppe Limestone Brick Stair"),
