@@ -1,10 +1,11 @@
+local S = minetest.get_translator("livingfloatlands")
 
 local modname = "livingfloatlands"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
 
 minetest.register_node("livingfloatlands:paleodesert_litter", {
-	description = ("Paleodesert sand litter"),
+	description = S("Paleodesert sand litter"),
 	tiles = {"livingfloatlands_paleodesert_litter.png", "default_desert_sandstone.png",
 		{name = "default_desert_sandstone.png^livingfloatlands_paleodesert_litter_side.png",
 			tileable_vertical = false}},
@@ -27,13 +28,13 @@ minetest.register_biome({
 		node_dungeon_alt = "default:desert_sandstone_brick",
 		node_dungeon_stair = "stairs:desert_sandstone_stair",
     y_max = 31000,
-    y_min = 1000,
+    y_min = 0,
     heat_point = 96,
     humidity_point = 15,
 })
 
 minetest.register_node("livingfloatlands:paleodesert_fern", {
-	description = ("Desert Fern"),
+	description = S("Desert Fern"),
 	drawtype = "plantlike",
 	waving = 1,
 	visual_scale = 2.0,
@@ -69,13 +70,13 @@ minetest.register_node("livingfloatlands:paleodesert_fern", {
 		},
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 2,
 		decoration = "livingfloatlands:paleodesert_fern",
 		param2 = 4,
 	})
 
 minetest.register_node("livingfloatlands:puzzlegrass", {
-	description = ("Puzzlegrass"),
+	description = S("Puzzlegrass"),
 	drawtype = "plantlike",
 	tiles = {"livingfloatlands_puzzlegrass.png"},
 	inventory_image = "livingfloatlands_puzzlegrass.png",
@@ -97,7 +98,7 @@ minetest.register_node("livingfloatlands:puzzlegrass", {
 })
 
 minetest.register_node("livingfloatlands:puzzlegrass_top", {
-	description = ("Puzzlegrass Top"),
+	description = S("Puzzlegrass Top"),
 	drawtype = "plantlike",
 	tiles = {"livingfloatlands_puzzlegrass_top.png"},
 	inventory_image = "livingfloatlands_puzzlegrass_top.png",
@@ -133,7 +134,7 @@ minetest.register_node("livingfloatlands:puzzlegrass_top", {
 		},
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_puzzlegrass_patch.mts",
 	})
 	minetest.register_decoration({
@@ -151,7 +152,7 @@ minetest.register_node("livingfloatlands:puzzlegrass_top", {
 		},
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_puzzlegrass_patch2.mts",
 	})
 
@@ -170,7 +171,7 @@ minetest.register_decoration({
 		},
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_puzzlegrass_patch3.mts",
 	})
 
@@ -189,7 +190,7 @@ minetest.register_decoration({
 		},
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_puzzlegrass_patch4.mts",
 	})
 
@@ -208,7 +209,7 @@ end
 
 -- joshua trunk
 minetest.register_node("livingfloatlands:paleodesert_joshua_trunk", {
-	description = ("Joshua Trunk"),
+	description = S("Joshua Trunk"),
 	tiles = {
 		"livingfloatlands_paleodesert_joshua_trunk_top.png",
 		"livingfloatlands_paleodesert_joshua_trunk_top.png",
@@ -222,7 +223,7 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_trunk", {
 
 -- joshua wood
 minetest.register_node("livingfloatlands:paleodesert_joshua_wood", {
-	description = ("Joshua Wood"),
+	description = S("Joshua Wood"),
 	tiles = {"livingfloatlands_paleodesert_joshua_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -235,7 +236,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:paleodesert_joshua_leaves", {
-  description = ("Joshua Leaves"),
+  description = S("Joshua Leaves"),
   drawtype = "plantlike",
   waving = 1,
   visual_scale = 2.0,
@@ -243,7 +244,7 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_leaves", {
   special_tiles = {"livingfloatlands_paleodesert_joshua_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -265,7 +266,7 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_leaves", {
 })
 
 minetest.register_node("livingfloatlands:paleodesert_joshua_sapling", {
-  description = ("Joshua Sapling"),
+  description = S("Joshua Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_paleodesert_joshua_sapling.png"},
   inventory_image = "livingfloatlands_paleodesert_joshua_sapling.png",
@@ -305,8 +306,8 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_sapling", {
       "livingfloatlands:paleodesert_joshua_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleodesert_joshua_wood.png"},
-      ("Joshua Stair"),
-      ("Joshua Slab"),
+      S("Joshua Stair"),
+      S("Joshua Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -315,15 +316,15 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_sapling", {
       "livingfloatlands:paleodesert_joshua_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleodesert_joshua_trunk_top.png", "livingfloatlands_paleodesert_joshua_trunk_top.png", "livingfloatlands_paleodesert_joshua_trunk.png"},
-      ("Joshua Trunk Stair"),
-      ("Joshua Trunk Slab"),
+      S("Joshua Trunk Stair"),
+      S("Joshua Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_joshua_wood",
     {
-      description = ("Joshua Wood Fence Gate"),
+      description = S("Joshua Wood Fence Gate"),
       texture = "livingfloatlands_paleodesert_joshua_wood.png",
       material = "livingfloatlands:paleodesert_joshua_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -335,7 +336,7 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_sapling", {
 default.register_fence(
   "livingfloatlands:fence_joshua_wood",
   {
-    description = ("Joshua Fence"),
+    description = S("Joshua Fence"),
     texture = "livingfloatlands_paleodesert_joshua_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_paleodesert_joshua_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_paleodesert_joshua_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -348,7 +349,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_joshua_wood",
   {
-    description = ("Joshua Fence Rail"),
+    description = S("Joshua Fence Rail"),
     texture = "livingfloatlands_paleodesert_joshua_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_paleodesert_joshua_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -369,7 +370,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:paleodesert"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleodesert_joshua_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -384,7 +385,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:paleodesert"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleodesert_joshua_tree2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -399,7 +400,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:paleodesert"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleodesert_joshua_tree3.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -420,7 +421,7 @@ end
 
 -- pine trunk
 minetest.register_node("livingfloatlands:paleodesert_paleopine_trunk", {
-	description = ("Paleopine Trunk"),
+	description = S("Paleopine Trunk"),
 	tiles = {
 		"livingfloatlands_paleodesert_paleopine_trunk_top.png",
 		"livingfloatlands_paleodesert_paleopine_trunk_top.png",
@@ -434,7 +435,7 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_trunk", {
 
 -- pine wood
 minetest.register_node("livingfloatlands:paleodesert_paleopine_wood", {
-	description = ("Paleopine Wood"),
+	description = S("Paleopine Wood"),
 	tiles = {"livingfloatlands_paleodesert_paleopine_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -447,7 +448,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:paleodesert_paleopine_leaves", {
-  description = ("Paleopine Leaves"),
+  description = S("Paleopine Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -455,7 +456,7 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_leaves", {
   special_tiles = {"livingfloatlands_paleodesert_paleopine_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -477,7 +478,7 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_leaves", {
 })
 
 minetest.register_node("livingfloatlands:paleodesert_paleopine_sapling", {
-  description = ("Paleopine Sapling"),
+  description = S("Paleopine Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_paleodesert_paleopine_sapling.png"},
   inventory_image = "livingfloatlands_paleodesert_paleopine_sapling.png",
@@ -517,8 +518,8 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_sapling", {
       "livingfloatlands:paleodesert_paleopine_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleodesert_paleopine_wood.png"},
-      ("Paleopine Stair"),
-      ("Paleopine Slab"),
+      S("Paleopine Stair"),
+      S("Paleopine Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -527,15 +528,15 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_sapling", {
       "livingfloatlands:paleodesert_paleopine_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleodesert_paleopine_trunk_top.png", "livingfloatlands_paleodesert_paleopine_trunk_top.png", "livingfloatlands_paleodesert_paleopine_trunk.png"},
-      ("Paleopine Trunk Stair"),
-      ("Paleopine Trunk Slab"),
+      S("Paleopine Trunk Stair"),
+      S("Paleopine Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_paleopine_wood",
     {
-      description = ("Paleopine Wood Fence Gate"),
+      description = S("Paleopine Wood Fence Gate"),
       texture = "livingfloatlands_paleodesert_paleopine_wood.png",
       material = "livingfloatlands:paleodesert_paleopine_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -547,7 +548,7 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_sapling", {
 default.register_fence(
   "livingfloatlands:fence_paleopine_wood",
   {
-    description = ("Paleopine Fence"),
+    description = S("Paleopine Fence"),
     texture = "livingfloatlands_paleodesert_paleopine_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_paleodesert_paleopine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_paleodesert_paleopine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -560,7 +561,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_paleopine_wood",
   {
-    description = ("Paleopine Fence Rail"),
+    description = S("Paleopine Fence Rail"),
     texture = "livingfloatlands_paleodesert_paleopine_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_paleodesert_paleopine_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -581,7 +582,7 @@ minetest.register_decoration({
     fill_ratio = 0.00021,
     biomes = {"livingfloatlands:paleodesert"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleodesert_paleopine.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -596,7 +597,7 @@ minetest.register_decoration({
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_paleodesert_rockformation.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -611,7 +612,7 @@ minetest.register_decoration({
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_paleodesert_rockformation2.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -626,7 +627,7 @@ minetest.register_decoration({
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_paleodesert_rockformation3.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -641,7 +642,7 @@ minetest.register_decoration({
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:paleodesert"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_paleodesert_rockformation4.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",

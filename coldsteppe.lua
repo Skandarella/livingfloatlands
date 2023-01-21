@@ -1,10 +1,11 @@
+local S = minetest.get_translator("livingfloatlands")
 
 local modname = "livingfloatlands"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
 
 minetest.register_node("livingfloatlands:coldsteppe_litter", {
-	description = ("Coldsteppe dirt with Grass"),
+	description = S("Coldsteppe dirt with Grass"),
 	tiles = {"livingfloatlands_coldsteppe_litter.png", "default_permafrost.png",
 		{name = "default_permafrost.png^livingfloatlands_coldsteppe_litter_side.png",
 			tileable_vertical = false}},
@@ -27,13 +28,13 @@ minetest.register_biome({
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
     y_max = 31000,
-    y_min = 1000,
+    y_min = 0,
     heat_point = 38,
     humidity_point = 27,
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_bulbouschervil_block", {
-	description = ("Bulbous Chervil Node"),
+	description = S("Bulbous Chervil Node"),
 	tiles = {"livingfloatlands_coldsteppe_bulbouschervil_block.png"},
 	groups = {crumbly = 3, soil = 1, falling_node = 0},
 	drop = "livingfloatlands:coldsteppe_bulbous_chervil_root",
@@ -41,7 +42,7 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbouschervil_block", {
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_bulbous_chervil_root", {
-	description = ("Bulbous Chervil Root"),
+	description = S("Bulbous Chervil Root"),
 	drawtype = "torchlike",
 	tiles = {"livingfloatlands_coldsteppe_bulbouschervil_root.png"},
 	inventory_image = "livingfloatlands_coldsteppe_bulbouschervil_root.png",
@@ -81,8 +82,8 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbous_chervil_root", {
 			octaves = 6,
 			persist = 1,
 		},
-		y_max = 31000,
-		y_min = 1000,
+		y_max = 3100,
+		y_min = 0,
 		decoration = "livingfloatlands:coldsteppe_bulbouschervil_block"
 	})
 
@@ -100,13 +101,13 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbous_chervil_root", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:coldsteppe_bulbouschervil_plant",
         spawn_by = "livingfloatlands:coldsteppe_bulbouschervil_block"
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_bulbouschervil_plant", {
-	    description = "Bulbous Chervil Plant",
+	    description = S"Bulbous Chervil Plant",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -139,13 +140,13 @@ minetest.register_node("livingfloatlands:coldsteppe_bulbouschervil_plant", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:coldsteppe_grass1",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_grass1", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -178,13 +179,13 @@ minetest.register_node("livingfloatlands:coldsteppe_grass1", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:coldsteppe_grass2",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_grass2", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -217,13 +218,13 @@ minetest.register_node("livingfloatlands:coldsteppe_grass2", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:coldsteppe_grass3",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_grass3", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -256,13 +257,13 @@ minetest.register_node("livingfloatlands:coldsteppe_grass3", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:coldsteppe_grass4",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_grass4", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -295,13 +296,13 @@ minetest.register_node("livingfloatlands:coldsteppe_grass4", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 2,
 		decoration = "livingfloatlands:coldsteppe_shrub",
         spawn_by = "livingfloatlands:coldsteppe_litter"
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_shrub", {
-	    description = "Coldsteppe Shrub",
+	    description = S"Coldsteppe Shrub",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -335,7 +336,7 @@ end
 
 -- pine trunk
 minetest.register_node("livingfloatlands:coldsteppe_pine_trunk", {
-	description = ("Red Pine Trunk"),
+	description = S("Red Pine Trunk"),
 	tiles = {
 		"livingfloatlands_coldsteppe_pine_trunk_top.png",
 		"livingfloatlands_coldsteppe_pine_trunk_top.png",
@@ -349,7 +350,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_trunk", {
 
 -- pine wood
 minetest.register_node("livingfloatlands:coldsteppe_pine_wood", {
-	description = ("Red Pine Wood"),
+	description = S("Red Pine Wood"),
 	tiles = {"livingfloatlands_coldsteppe_pine_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -362,21 +363,21 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine_leaves", {
-  description = ("Red Pine Leaves"),
+  description = S("Red Pine Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   tiles = {"livingfloatlands_coldsteppe_pine_leaves.png"},
   special_tiles = {"livingfloatlands_coldsteppe_pine_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
         -- player will get sapling with 1/50 chance
         items = {'livingfloatlands:coldsteppe_pine_sapling'},
-        rarity = 50,
+        rarity = 35,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -391,7 +392,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_leaves", {
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine_sapling", {
-  description = ("Red Pine Sapling"),
+  description = S("Red Pine Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_coldsteppe_pine_sapling.png"},
   inventory_image = "livingfloatlands_coldsteppe_pine_sapling.png",
@@ -431,8 +432,8 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_sapling", {
       "livingfloatlands:coldsteppe_pine_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_coldsteppe_pine_wood.png"},
-      ("Red Pine Stair"),
-      ("Red Pine Slab"),
+      S("Red Pine Stair"),
+      S("Red Pine Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -441,15 +442,15 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_sapling", {
       "livingfloatlands:coldsteppe_pine_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_coldsteppe_pine_trunk_top.png", "livingfloatlands_coldsteppe_pine_trunk_top.png", "livingfloatlands_coldsteppe_pine_trunk.png"},
-      ("Red Pine Trunk Stair"),
-      ("Red Pine Trunk Slab"),
+      S("Red Pine Trunk Stair"),
+      S("Red Pine Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_pine_wood",
     {
-      description = ("Red Pine Wood Fence Gate"),
+      description = S("Red Pine Wood Fence Gate"),
       texture = "livingfloatlands_coldsteppe_pine_wood.png",
       material = "livingfloatlands:coldsteppe_pine_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -461,7 +462,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_sapling", {
 default.register_fence(
   "livingfloatlands:fence_pine_wood",
   {
-    description = ("Red Pine Fence"),
+    description = S("Red Pine Fence"),
     texture = "livingfloatlands_coldsteppe_pine_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_coldsteppe_pine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_coldsteppe_pine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -474,7 +475,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_pine_wood",
   {
-    description = ("Red Pine Fence Rail"),
+    description = S("Red Pine Fence Rail"),
     texture = "livingfloatlands_coldsteppe_pine_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_coldsteppe_pine_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -495,7 +496,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -510,7 +511,7 @@ minetest.register_decoration({
     fill_ratio = 0.00013,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine11.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -518,7 +519,7 @@ minetest.register_decoration({
 
 -- cooked pinecone
 minetest.register_craftitem("livingfloatlands:roasted_pine_nuts", {
-	description = ("Roasted Pine Nuts"),
+	description = S("Roasted Pine Nuts"),
 	inventory_image = "livingfloatlands_coldsteppe_pine_nuts_roasted.png",
 	on_use = minetest.item_eat(5),
 	groups = {food = 1, flammable = 2},
@@ -534,7 +535,7 @@ minetest.register_craft({
 -- raw pinecone
 
 minetest.register_node("livingfloatlands:coldsteppe_pine_pinecone", {
-	description = ("Unroasted Red Pinecone"),
+	description = S("Unroasted Red Pinecone"),
 	drawtype = "torchlike",
 	tiles = {"livingfloatlands_coldsteppe_pine_pinecone.png"},
 	inventory_image = "livingfloatlands_coldsteppe_pine_pinecone.png",
@@ -548,7 +549,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_pinecone", {
 	},
 	groups = {
 		fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 1, leafdecay_drop = 1
+		leafdecay = 1, leafdecay_drop = 1, winleafdecay_drop = 1, winleafdecay = 3
 	},
 	drop = "livingfloatlands:coldsteppe_pine_pinecone",
 	on_use = minetest.item_eat(2),
@@ -575,7 +576,7 @@ end
 
 -- pine2 trunk
 minetest.register_node("livingfloatlands:coldsteppe_pine2_trunk", {
-	description = ("Norway Spruce Trunk"),
+	description = S("Norway Spruce Trunk"),
 	tiles = {
 		"livingfloatlands_coldsteppe_pine2_trunk_top.png",
 		"livingfloatlands_coldsteppe_pine2_trunk_top.png",
@@ -589,7 +590,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_trunk", {
 
 -- pine2 wood
 minetest.register_node("livingfloatlands:coldsteppe_pine2_wood", {
-	description = ("Norway Spruce Wood"),
+	description = S("Norway Spruce Wood"),
 	tiles = {"livingfloatlands_coldsteppe_pine2_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -602,14 +603,14 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine2_leaves", {
-  description = ("Norway Spruce Leaves"),
+  description = S("Norway Spruce Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   tiles = {"livingfloatlands_coldsteppe_pine2_leaves.png"},
   special_tiles = {"livingfloatlands_coldsteppe_pine2_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -631,7 +632,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_leaves", {
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine2_sapling", {
-  description = ("Norway Spruce Sapling"),
+  description = S("Norway Spruce Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_coldsteppe_pine2_sapling.png"},
   inventory_image = "livingfloatlands_coldsteppe_pine2_sapling.png",
@@ -671,8 +672,8 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_sapling", {
       "livingfloatlands:coldsteppe_pine2_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_coldsteppe_pine2_wood.png"},
-      ("Norway Spruce Stair"),
-      ("Norway Spruce Slab"),
+      S("Norway Spruce Stair"),
+      S("Norway Spruce Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -681,15 +682,15 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_sapling", {
       "livingfloatlands:coldsteppe_pine2_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_coldsteppe_pine_trunk_top.png", "livingfloatlands_coldsteppe_pine2_trunk_top.png", "livingfloatlands_coldsteppe_pine2_trunk.png"},
-      ("Norway Spruce Trunk Stair"),
-      ("Norway Spruce Trunk Slab"),
+      S("Norway Spruce Trunk Stair"),
+      S("Norway Spruce Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_pine2_wood",
     {
-      description = ("Norway Spruce Wood Fence Gate"),
+      description = S("Norway Spruce Wood Fence Gate"),
       texture = "livingfloatlands_coldsteppe_pine2_wood.png",
       material = "livingfloatlands:coldsteppe_pine2_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -701,7 +702,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_sapling", {
 default.register_fence(
   "livingfloatlands:fence_pine2_wood",
   {
-    description = ("Norway Spruce Fence"),
+    description = S("Norway Spruce Fence"),
     texture = "livingfloatlands_coldsteppe_pine2_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_coldsteppe_pine2_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_coldsteppe_pine2_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -714,7 +715,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_pine2_wood",
   {
-    description = ("Norway Spruce Fence Rail"),
+    description = S("Norway Spruce Fence Rail"),
     texture = "livingfloatlands_coldsteppe_pine2_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_coldsteppe_pine2_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -735,7 +736,7 @@ minetest.register_decoration({
     fill_ratio = 0.00017,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -750,7 +751,7 @@ minetest.register_decoration({
     fill_ratio = 0.00015,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine22.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -766,7 +767,7 @@ minetest.register_craft({
 -- raw pinecone
 
 minetest.register_node("livingfloatlands:coldsteppe_pine2_pinecone", {
-	description = ("Unroasted Norway Spruce Pinecone"),
+	description = S("Unroasted Norway Spruce Pinecone"),
 	drawtype = "torchlike",
 	tiles = {"livingfloatlands_coldsteppe_pine2_pinecone.png"},
 	inventory_image = "livingfloatlands_coldsteppe_pine2_pinecone.png",
@@ -780,7 +781,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_pinecone", {
 	},
 	groups = {
 		fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 1, leafdecay_drop = 1
+		leafdecay = 1, leafdecay_drop = 1, winleafdecay_drop = 1, winleafdecay = 3
 	},
 	drop = "livingfloatlands:coldsteppe_pine2_pinecone",
 	on_use = minetest.item_eat(2),
@@ -807,7 +808,7 @@ end
 
 -- pine3 trunk
 minetest.register_node("livingfloatlands:coldsteppe_pine3_trunk", {
-	description = ("Siberian Larix Trunk"),
+	description = S("Siberian Larix Trunk"),
 	tiles = {
 		"livingfloatlands_coldsteppe_pine3_trunk_top.png",
 		"livingfloatlands_coldsteppe_pine3_trunk_top.png",
@@ -821,7 +822,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_trunk", {
 
 -- pine3 wood
 minetest.register_node("livingfloatlands:coldsteppe_pine3_wood", {
-	description = ("Siberian Larix Wood"),
+	description = S("Siberian Larix Wood"),
 	tiles = {"livingfloatlands_coldsteppe_pine3_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -834,14 +835,14 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine3_leaves", {
-  description = ("Siberian Larix Leaves"),
+  description = S("Siberian Larix Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   tiles = {"livingfloatlands_coldsteppe_pine3_leaves.png"},
   special_tiles = {"livingfloatlands_coldsteppe_pine3_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -863,7 +864,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_leaves", {
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine3_sapling", {
-  description = ("Siberian Larix Sapling"),
+  description = S("Siberian Larix Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_coldsteppe_pine3_sapling.png"},
   inventory_image = "livingfloatlands_coldsteppe_pine3_sapling.png",
@@ -903,8 +904,8 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_sapling", {
       "livingfloatlands:coldsteppe_pine3_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_coldsteppe_pine3_wood.png"},
-      ("Siberian Larix Stair"),
-      ("Siberian Larix Slab"),
+      S("Siberian Larix Stair"),
+      S("Siberian Larix Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -913,15 +914,15 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_sapling", {
       "livingfloatlands:coldsteppe_pine3_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_coldsteppe_pine_trunk_top.png", "livingfloatlands_coldsteppe_pine3_trunk_top.png", "livingfloatlands_coldsteppe_pine3_trunk.png"},
-      ("Siberian Larix Trunk Stair"),
-      ("Siberian Larix Trunk Slab"),
+      S("Siberian Larix Trunk Stair"),
+      S("Siberian Larix Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_pine3_wood",
     {
-      description = ("Siberian Larix Wood Fence Gate"),
+      description = S("Siberian Larix Wood Fence Gate"),
       texture = "livingfloatlands_coldsteppe_pine3_wood.png",
       material = "livingfloatlands:coldsteppe_pine3_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -933,7 +934,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_sapling", {
 default.register_fence(
   "livingfloatlands:fence_pine3_wood",
   {
-    description = ("Siberian Larix Fence"),
+    description = S("Siberian Larix Fence"),
     texture = "livingfloatlands_coldsteppe_pine3_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_coldsteppe_pine3_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_coldsteppe_pine3_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -946,7 +947,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_pine3_wood",
   {
-    description = ("Siberian Larix Fence Rail"),
+    description = S("Siberian Larix Fence Rail"),
     texture = "livingfloatlands_coldsteppe_pine3_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_coldsteppe_pine3_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -967,7 +968,7 @@ minetest.register_decoration({
     fill_ratio = 0.00057,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine3.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -982,7 +983,7 @@ minetest.register_decoration({
     fill_ratio = 0.00137,
     biomes = {"livingfloatlands:coldsteppe"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/livingfloatlands_coldsteppe_pine33.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -999,7 +1000,7 @@ minetest.register_craft({
 -- raw pinecone
 
 minetest.register_node("livingfloatlands:coldsteppe_pine3_pinecone", {
-	description = ("Unroasted Siberian Larix Pinecone"),
+	description = S("Unroasted Siberian Larix Pinecone"),
 	drawtype = "torchlike",
 	tiles = {"livingfloatlands_coldsteppe_pine3_pinecone.png"},
 	inventory_image = "livingfloatlands_coldsteppe_pine3_pinecone.png",
@@ -1013,7 +1014,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_pinecone", {
 	},
 	groups = {
 		fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 1, leafdecay_drop = 1
+		leafdecay = 1, leafdecay_drop = 1, winleafdecay_drop = 1, winleafdecay = 3
 	},
 	drop = "livingfloatlands:coldsteppe_pine3_pinecone",
 	on_use = minetest.item_eat(2),
@@ -1026,7 +1027,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_pinecone", {
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_rock", {
-	description = ("Coldsteppe Granite Rock"),
+	description = S("Coldsteppe Granite Rock"),
 	tiles = {"livingfloatlands_coldsteppe_rock.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = "livingfloatlands:coldsteppe_rock",
@@ -1043,7 +1044,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -1059,14 +1060,14 @@ minetest.register_node("livingfloatlands:coldsteppe_rock", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation11.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
 	})
 
 minetest.register_node("livingfloatlands:coldsteppe_rock2", {
-	description = ("Coldsteppe Limestone Rock"),
+	description = S("Coldsteppe Limestone Rock"),
 	tiles = {"livingfloatlands_coldsteppe_rock2.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = "livingfloatlands:coldsteppe_rock2",
@@ -1083,7 +1084,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock2", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation2.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -1099,7 +1100,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock2", {
     fill_ratio = 0.00007,
 		biomes = {"livingfloatlands:coldsteppe"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_rockformation.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -1107,7 +1108,7 @@ minetest.register_node("livingfloatlands:coldsteppe_rock2", {
 
 -- Bricks slabs and walls
 
-walls.register(":livingfloatlands:coldsteppe_brick_wall", "Coldsteppe Granite Brick Wall", "livingfloatlands_coldsteppe_rock_brick.png",
+walls.register(":livingfloatlands:coldsteppe_brick_wall", S"Coldsteppe Granite Brick Wall", "livingfloatlands_coldsteppe_rock_brick.png",
 		"livingfloatlands:coldsteppe_brick_wall", default.node_sound_stone_defaults())
 
     stairs.register_stair_and_slab(
@@ -1115,13 +1116,13 @@ walls.register(":livingfloatlands:coldsteppe_brick_wall", "Coldsteppe Granite Br
       "livingfloatlands:coldsteppe_rock_brick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingfloatlands_coldsteppe_rock_brick.png"},
-      ("Coldsteppe Granite Brick Stair"),
-      ("Coldsteppe Granite Brick Slab"),
+      S("Coldsteppe Granite Brick Stair"),
+      S("Coldsteppe Granite Brick Slab"),
       default.node_sound_wood_defaults()
     )
 
 minetest.register_node("livingfloatlands:coldsteppe_rock_brick", {
-	description = ("Coldsteppe Granite Brick"),
+	description = S("Coldsteppe Granite Brick"),
 	tiles = {"livingfloatlands_coldsteppe_rock_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
@@ -1132,7 +1133,7 @@ minetest.register_craft({
 	output = "livingfloatlands:coldsteppe_rock_brick",
 	type = "shapeless",
 	recipe = 
-		{"livingfloatlands:coldsteppe_rock", "livingfloatlands:coldsteppe_rock", "livingfloatlands:coldsteppe_rock", "livingfloatlands:coldsteppe_rock"}
+		{"livingfloatlands:coldsteppe_rock", "livingfloatlands:coldsteppe_rock"}
 
 	
 })
@@ -1141,12 +1142,12 @@ minetest.register_craft({
 	output = "livingfloatlands:coldsteppe_brick_wall",
 	type = "shapeless",
 	recipe = 
-		{"livingfloatlands:coldsteppe_rock_brick", "livingfloatlands:coldsteppe_rock_brick", "livingfloatlands:coldsteppe_rock_brick", "livingfloatlands:coldsteppe_rock_brick", "livingfloatlands:coldsteppe_rock_brick", "livingfloatlands:coldsteppe_rock_brick"}
+		{"livingfloatlands:coldsteppe_rock_brick"}
 
 	
 })
 
-walls.register(":livingfloatlands:coldsteppe_brick2_wall", "Coldsteppe Limestone Brick Wall", "livingfloatlands_coldsteppe_rock2_brick.png",
+walls.register(":livingfloatlands:coldsteppe_brick2_wall", S"Coldsteppe Limestone Brick Wall", "livingfloatlands_coldsteppe_rock2_brick.png",
 		"livingfloatlands:coldsteppe_brick2_wall", default.node_sound_stone_defaults())
 
     stairs.register_stair_and_slab(
@@ -1154,13 +1155,13 @@ walls.register(":livingfloatlands:coldsteppe_brick2_wall", "Coldsteppe Limestone
       "livingfloatlands:coldsteppe_rock2_brick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingfloatlands_coldsteppe_rock2_brick.png"},
-      ("Coldsteppe Limestone Brick Stair"),
-      ("Coldsteppe Limestone Brick Slab"),
+      S("Coldsteppe Limestone Brick Stair"),
+      S("Coldsteppe Limestone Brick Slab"),
       default.node_sound_wood_defaults()
     )
 
 minetest.register_node("livingfloatlands:coldsteppe_rock2_brick", {
-	description = ("Coldsteppe limestone Brick"),
+	description = S("Coldsteppe limestone Brick"),
 	tiles = {"livingfloatlands_coldsteppe_rock2_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
@@ -1171,7 +1172,7 @@ minetest.register_craft({
 	output = "livingfloatlands:coldsteppe_rock2_brick",
 	type = "shapeless",
 	recipe = 
-		{"livingfloatlands:coldsteppe_rock2", "livingfloatlands:coldsteppe_rock2", "livingfloatlands:coldsteppe_rock2", "livingfloatlands:coldsteppe_rock2"}
+		{"livingfloatlands:coldsteppe_rock2", "livingfloatlands:coldsteppe_rock2"}
 
 	
 })
@@ -1180,7 +1181,7 @@ minetest.register_craft({
 	output = "livingfloatlands:coldsteppe_brick2_wall",
 	type = "shapeless",
 	recipe = 
-		{"livingfloatlands:coldsteppe_rock2_brick", "livingfloatlands:coldsteppe_rock2_brick", "livingfloatlands:coldsteppe_rock2_brick", "livingfloatlands:coldsteppe_rock2_brick", "livingfloatlands:coldsteppe_rock2_brick", "livingfloatlands:coldsteppe_rock2_brick"}
+		{"livingfloatlands:coldsteppe_rock2_brick"}
 
 	
 })

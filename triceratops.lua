@@ -1,3 +1,6 @@
+local S = minetest.get_translator("livingfloatlands")
+local random = math.random
+
 mobs:register_mob("livingfloatlands:triceratops", {
 stepheight = 2,
 	type = "animal",
@@ -11,7 +14,7 @@ stepheight = 2,
 	hp_min = 250,
 	hp_max = 400,
 	armor = 100,
-	collisionbox = {-1.2, -0.01, -1.0, 1.2, 1.5, 1.0},
+	collisionbox = {-1.0, -0.01, -1.0, 1.0, 2.0, 1.0},
 	visual = "mesh",
 	mesh = "Triceratops.b3d",
 	visual_size = {x = 1.0, y = 1.0},
@@ -28,6 +31,7 @@ stepheight = 2,
 	walk_velocity = 2,
 	run_velocity = 4,
         walk_chance = 20,
+        knock_back = false,
 	runaway = false,
 	jump = false,
         jump_height = 6,
@@ -39,6 +43,7 @@ stepheight = 2,
 	light_damage = 0,
 	fear_height = 3,
         pathfinding = true,
+        stay_near = {{"livingfloatlands:paleojungle_litter_leaves", "livingfloatlands:paleojungle_smallpalm", "livingfloatlands:giantforest_grass3", "livingfloatlands:paleojungle_ferngrass"}, 5},
 	animation = {
 		speed_normal = 50,
 		stand_start = 0,
@@ -47,7 +52,11 @@ stepheight = 2,
 		walk_end = 200,
 		punch_start = 250,
 		punch_end = 350,
-		-- 50-70 is slide/water idle
+		die_start = 250,
+		die_end = 350,
+		die_speed = 50,
+		die_loop = false,
+		die_rotate = true,
 	},
 
 	follow = {
@@ -63,7 +72,7 @@ stepheight = 2,
 		-- feed or tame
 		if mobs:feed_tame(self, clicker, 4, false, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 5, 50, 80, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 0, 5, false, nil) then return end
 	end,
 })
 
@@ -76,14 +85,44 @@ if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:triceratops",
 	nodes = {"livingfloatlands:paleojungle_litter"},
+	neighbors = {"livingfloatlands:giantforest_grass3"},
 	min_light = 0,
 	interval = 60,
-	chance = 8000, -- 15000
+	chance = 2000, -- 15000
 	active_object_count = 2,
-	min_height = 1000,
+	min_height = 2,
 	max_height = 31000,
 	day_toggle = true,
-})
+		on_spawn = function(self, pos)
+
+			local nods = minetest.find_nodes_in_area_under_air(
+				{x = pos.x - 4, y = pos.y - 3, z = pos.z - 4},
+				{x = pos.x + 4, y = pos.y + 3, z = pos.z + 4},
+				{"livingfloatlands:paleojungle_litter"})
+
+			if nods and #nods > 0 then
+
+				-- min herd of 2
+				local iter = math.min(#nods, 2)
+
+-- print("--- triceratop at", minetest.pos_to_string(pos), iter)
+
+				for n = 1, iter do
+
+					local pos2 = nods[random(#nods)]
+					local kid = random(4) == 1 and true or nil
+
+					pos2.y = pos2.y + 2
+
+					if minetest.get_node(pos2).name == "air" then
+
+						mobs:add_mob(pos2, {
+							name = "livingfloatlands:triceratops", child = kid})
+					end
+				end
+			end
+		end
+	})
 end
 
 mobs:register_egg("livingfloatlands:triceratops", ("Triceratops"), "atriceratops.png")

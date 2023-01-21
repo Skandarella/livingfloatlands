@@ -1,3 +1,5 @@
+local S = minetest.get_translator("livingfloatlands")
+
 mobs:register_mob("livingfloatlands:rhamphorhynchus", {
 stepheight = 3,
 	type = "animal",
@@ -43,11 +45,13 @@ stepheight = 3,
 		speed_normal = 100,
 		stand_start = 150,
 		stand_end = 250,
-		walk_start = 0,
-		walk_end = 100,
-		fly_start = 0, -- swim animation
+		fly_start = 0, 
 		fly_end = 100,
-		-- 50-70 is slide/water idle
+		die_start = 0,
+		die_end = 100,
+		die_speed = 50,
+		die_loop = false,
+		die_rotate = true,
 	},
 
 fly_in = {"air", "default:water_source", "default:river_water_source"},
@@ -63,7 +67,7 @@ view_range = 10,
 		-- feed or tame
 		if mobs:feed_tame(self, clicker, 4, false, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 5, 50, 80, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 25, 0, false, nil) then return end
 	end,
 })
 
@@ -78,9 +82,9 @@ mobs:spawn({
 	nodes = {"livingfloatlands:giantforest_paleoredwood_wood", "livingfloatlands:paleojungle_litter"},
 	min_light = 0,
 	interval = 60,
-	chance = 8000, -- 15000
+	chance = 200, -- 15000
 	active_object_count = 2,
-	min_height = 1000,
+	min_height = 2,
 	max_height = 31000,
 	day_toggle = true,
 })
@@ -91,7 +95,7 @@ mobs:register_egg("livingfloatlands:rhamphorhynchus", ("Rhamphorhynchus"), "arha
 
 -- feather
 minetest.register_craftitem(":livingfloatlands:dinosaur_feather", {
-	description = ("Dinosaur Feather"),
+	description = S("Dinosaur Feather"),
 	inventory_image = "livingfloatlands_dinosaur_feather.png",
 	groups = {flammable = 2},
 })

@@ -1,10 +1,11 @@
+local S = minetest.get_translator("livingfloatlands")
 
 local modname = "livingfloatlands"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
 
 minetest.register_node("livingfloatlands:paleojungle_litter", {
-	description = ("Paleojungle dirt with Grass"),
+	description = S("Paleojungle dirt with Grass"),
 	tiles = {"livingfloatlands_paleojungle_litter.png", "default_dirt.png",
 		{name = "default_dirt.png^livingfloatlands_paleojungle_litter_side.png",
 			tileable_vertical = false}},
@@ -27,13 +28,13 @@ minetest.register_biome({
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
     y_max = 31000,
-    y_min = 1000,
+    y_min = 3,
     heat_point = 95,
     humidity_point = 63,
 })
 
 minetest.register_node("livingfloatlands:paleojungle_ferngrass", {
-	    description = "Paleojungle Fern",
+	    description = S"Paleojungle Fern",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -66,13 +67,13 @@ minetest.register_node("livingfloatlands:paleojungle_ferngrass", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:paleojungle_ferngrass",
         spawn_by = "livingfloatlands:paleojungle_litter"
 	})
 
 minetest.register_node("livingfloatlands:paleojungle_smallpalm", {
-	    description = "Small Paleojungle Palm",
+	    description = S"Small Paleojungle Palm",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 4.0,
@@ -105,14 +106,14 @@ minetest.register_node("livingfloatlands:paleojungle_smallpalm", {
 			persist = 1,
 		},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 1,
 		decoration = "livingfloatlands:paleojungle_smallpalm",
         spawn_by = "livingfloatlands:paleojungle_litter"
 	})
 
 
 minetest.register_node("livingfloatlands:paleojungle_clubmoss_fruit", {
-  description = ("Clubmoss Fruit"),
+  description = S("Clubmoss Fruit"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -121,7 +122,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_fruit", {
   paramtype = "light",
   on_use = minetest.item_eat(5),
   is_ground_content = false,
-  groups = {food = 1, snappy = 3, leafdecay = 3, flammable = 2},
+  groups = {food = 1, snappy = 3, leafdecay = 3, flammable = 2, winleafdecay_drop = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -157,7 +158,7 @@ end
 
 -- paleo oak trunk
 minetest.register_node("livingfloatlands:paleojungle_clubmoss_trunk", {
-	description = ("Clubmoss Trunk"),
+	description = S("Clubmoss Trunk"),
 	tiles = {
 		"livingfloatlands_paleojungle_clubmoss_trunk_top.png",
 		"livingfloatlands_paleojungle_clubmoss_trunk_top.png",
@@ -171,7 +172,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_trunk", {
 
 -- clubmoss wood
 minetest.register_node("livingfloatlands:paleojungle_clubmoss_wood", {
-	description = ("Clubmoss Wood"),
+	description = S("Clubmoss Wood"),
 	tiles = {"livingfloatlands_paleojungle_clubmoss_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -184,7 +185,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:paleojungle_clubmoss_leaves", {
-  description = ("Clubmoss Leaves"),
+  description = S("Clubmoss Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -192,14 +193,14 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_leaves", {
   special_tiles = {"livingfloatlands_paleojungle_clubmoss_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
         -- player will get sapling with 1/50 chance
         items = {'livingfloatlands:paleojungle_clubmoss_sapling'},
-        rarity = 50,
+        rarity = 4,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -214,7 +215,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_leaves", {
 })
 
 minetest.register_node("livingfloatlands:paleojungle_clubmoss_sapling", {
-  description = ("Clubmoss Sapling"),
+  description = S("Clubmoss Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_paleojungle_clubmoss_sapling.png"},
   inventory_image = "livingfloatlands_paleojungle_clubmoss_sapling.png",
@@ -254,8 +255,8 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_sapling", {
       "livingfloatlands:paleojungle_clubmoss_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleojungle_clubmoss_wood.png"},
-      ("Clubmoss Stair"),
-      ("Clubmoss Slab"),
+      S("Clubmoss Stair"),
+      S("Clubmoss Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -264,15 +265,15 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_sapling", {
       "livingfloatlands:paleojungle_clubmoss_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleojungle_clubmoss_trunk_top.png", "livingfloatlands_paleojungle_clubmoss_trunk_top.png", "livingfloatlands_paleojungle_clubmoss_trunk.png"},
-      ("Clubmoss Trunk Stair"),
-      ("Clubmoss Trunk Slab"),
+      S("Clubmoss Trunk Stair"),
+      S("Clubmoss Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_clubmoss_wood",
     {
-      description = ("Clubmoss Wood Fence Gate"),
+      description = S("Clubmoss Wood Fence Gate"),
       texture = "livingfloatlands_paleojungle_clubmoss_wood.png",
       material = "livingfloatlands_paleojungle_clubmoss_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -284,7 +285,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_sapling", {
 default.register_fence(
   "livingfloatlands:fence_clubmoss_wood",
   {
-    description = ("Clubmoss Fence"),
+    description = S("Clubmoss Fence"),
     texture = "livingfloatlands_paleojungle_clubmoss_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_paleojungle_clubmoss_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_paleojungle_clubmoss_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -297,7 +298,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_clubmoss_wood",
   {
-    description = ("Clubmoss Fence Rail"),
+    description = S("Clubmoss Fence Rail"),
     texture = "livingfloatlands_paleojungle_clubmoss_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_paleojungle_clubmoss_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -318,7 +319,7 @@ minetest.register_decoration({
     fill_ratio = 0.00045,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_clubmoss_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -333,7 +334,7 @@ minetest.register_decoration({
     fill_ratio = 0.00045,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_clubmoss_tree2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -348,7 +349,7 @@ minetest.register_decoration({
     fill_ratio = 0.00045,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_clubmoss_tree3.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -369,7 +370,7 @@ end
 
 -- conifere trunk
 minetest.register_node("livingfloatlands:paleojungle_conifere_trunk", {
-	description = ("Conifere Trunk"),
+	description = S("Conifere Trunk"),
 	tiles = {
 		"livingfloatlands_paleojungle_conifere_trunk_top.png",
 		"livingfloatlands_paleojungle_conifere_trunk_top.png",
@@ -383,7 +384,7 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_trunk", {
 
 -- conifere wood
 minetest.register_node("livingfloatlands:paleojungle_conifere_wood", {
-	description = ("Conifere Wood"),
+	description = S("Conifere Wood"),
 	tiles = {"livingfloatlands_paleojungle_conifere_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -396,7 +397,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:paleojungle_conifere_leaves", {
-  description = ("Conifere Leaves"),
+  description = S("Conifere Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -404,14 +405,14 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_leaves", {
   special_tiles = {"livingfloatlands_paleojungle_conifere_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
         -- player will get sapling with 1/50 chance
         items = {'livingfloatlands:paleojungle_conifere_sapling'},
-        rarity = 50,
+        rarity = 10,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -426,7 +427,7 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_leaves", {
 })
 
 minetest.register_node("livingfloatlands:paleojungle_conifere_sapling", {
-  description = ("Conifere Sapling"),
+  description = S("Conifere Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_paleojungle_conifere_sapling.png"},
   inventory_image = "livingfloatlands_paleojungle_conifere_sapling.png",
@@ -466,8 +467,8 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_sapling", {
       "livingfloatlands:paleojungle_conifere_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleojungle_conifere_wood.png"},
-      ("Conifere Stair"),
-      ("Conifere Slab"),
+      S("Conifere Stair"),
+      S("Conifere Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -476,15 +477,15 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_sapling", {
       "livingfloatlands:paleojungle_conifere_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleojungle_conifere_trunk_top.png", "livingfloatlands_paleojungle_conifere_trunk_top.png", "livingfloatlands_paleojungle_conifere_trunk.png"},
-      ("Conifere Trunk Stair"),
-      ("Conifere Trunk Slab"),
+      S("Conifere Trunk Stair"),
+      S("Conifere Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_conifere_wood",
     {
-      description = ("Conifere Wood Fence Gate"),
+      description = S("Conifere Wood Fence Gate"),
       texture = "livingfloatlands_paleojungle_conifere_wood.png",
       material = "livingfloatlands_paleojungle_conifere_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -496,7 +497,7 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_sapling", {
 default.register_fence(
   "livingfloatlands:fence_conifere_wood",
   {
-    description = ("Conifere Fence"),
+    description = S("Conifere Fence"),
     texture = "livingfloatlands_paleojungle_conifere_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_paleojungle_conifere_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_paleojungle_conifere_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -509,7 +510,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_conifere_wood",
   {
-    description = ("Conifere Fence Rail"),
+    description = S("Conifere Fence Rail"),
     texture = "livingfloatlands_paleojungle_conifere_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_paleojungle_conifere_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -530,7 +531,7 @@ minetest.register_decoration({
     fill_ratio = 0.00045,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_conifere_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -545,7 +546,7 @@ minetest.register_decoration({
     fill_ratio = 0.00045,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_conifere_tree2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -567,7 +568,7 @@ end
 
 -- paleo palm trunk
 minetest.register_node("livingfloatlands:paleojungle_paleopalm_trunk", {
-	description = ("Paleopalm Trunk"),
+	description = S("Paleopalm Trunk"),
 	tiles = {
 		"livingfloatlands_paleojungle_paleopalm_trunk_top.png",
 		"livingfloatlands_paleojungle_paleopalm_trunk_top.png",
@@ -581,7 +582,7 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_trunk", {
 
 -- paleo Palm wood
 minetest.register_node("livingfloatlands:paleojungle_paleopalm_wood", {
-	description = ("Paleo Palm Wood"),
+	description = S("Paleo Palm Wood"),
 	tiles = {"livingfloatlands_paleojungle_paleopalm_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -594,7 +595,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:paleojungle_paleopalm_leaves", {
-  description = ("Paleo Palm Leaves"),
+  description = S("Paleo Palm Leaves"),
  drawtype = "plantlike",
   waving = 1,
   visual_scale = 4.0,
@@ -602,14 +603,14 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_leaves", {
   special_tiles = {"livingfloatlands_paleojungle_paleopalm_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
         -- player will get sapling with 1/50 chance
         items = {'livingfloatlands:paleojungle_paleopalm_sapling'},
-        rarity = 50,
+        rarity =8,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -624,7 +625,7 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_leaves", {
 })
 
 minetest.register_node("livingfloatlands:paleojungle_paleopalm_sapling", {
-  description = ("Paleo Palm Sapling"),
+  description = S("Paleo Palm Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_paleojungle_paleopalm_sapling.png"},
   inventory_image = "livingfloatlands_paleojungle_paleopalm_sapling.png",
@@ -664,8 +665,8 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_sapling", {
       "livingfloatlands:paleojungle_paleopalm_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleojungle_paleopalm_wood.png"},
-      ("Paleo Palm Stair"),
-      ("Paleo Palm Slab"),
+      S("Paleo Palm Stair"),
+      S("Paleo Palm Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -674,15 +675,15 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_sapling", {
       "livingfloatlands:paleojungle_paleopalm_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_paleojungle_paleopalm_trunk_top.png", "livingfloatlands_paleojungle_paleopalm_trunk_top.png", "livingfloatlands_paleojungle_paleopalm_trunk.png"},
-      ("Paleo Palm Trunk Stair"),
-      ("Paleo Palm Trunk Slab"),
+      S("Paleo Palm Trunk Stair"),
+      S("Paleo Palm Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_paleopalm_wood",
     {
-      description = ("Paleo Palm Wood Fence Gate"),
+      description = S("Paleo Palm Wood Fence Gate"),
       texture = "livingfloatlands_paleojungle_paleopalm_wood.png",
       material = "livingfloatlands_paleojungle_paleopalm_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -694,7 +695,7 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_sapling", {
 default.register_fence(
   "livingfloatlands:fence_paleopalm_wood",
   {
-    description = ("Paleo Palm Fence"),
+    description = S("Paleo Palm Fence"),
     texture = "livingfloatlands_paleojungle_conifere_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_paleojungle_paleopalm_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_paleojungle_paleopalm_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -707,7 +708,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_paleopalm_wood",
   {
-    description = ("Paleo Palm Fence Rail"),
+    description = S("Paleo Palm Fence Rail"),
     texture = "livingfloatlands_paleojungle_paleopalm_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_paleojungle_paleopalm_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -728,7 +729,7 @@ minetest.register_decoration({
     fill_ratio = 0.00245,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_paleopalm_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -743,7 +744,7 @@ minetest.register_decoration({
     fill_ratio = 0.00245,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_paleopalm_tree2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -758,14 +759,14 @@ minetest.register_decoration({
     fill_ratio = 0.00245,
     biomes = {"livingfloatlands:paleojungle"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/paleojungle_paleopalm_tree3.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
 
 minetest.register_node("livingfloatlands:paleojungle_littler_dirt", {
-	description = ("Paleo Jungle Ground with dirt"),
+	description = S("Paleo Jungle Ground with dirt"),
 	tiles = {"livingfloatlands_paleojungle_litter_dirt.png"},
 	groups = {crumbly = 3, soil = 1, falling_node = 0},
 	drop = "livingfloatlands:paleojungle_littler_dirt",
@@ -773,7 +774,7 @@ minetest.register_node("livingfloatlands:paleojungle_littler_dirt", {
 })
 
 minetest.register_node("livingfloatlands:paleojungle_littler_leaves", {
-	description = ("Paleo Jungle Ground with leaves"),
+	description = S("Paleo Jungle Ground with leaves"),
 	tiles = {"livingfloatlands_paleojungle_litter_leaves.png"},
 	groups = {crumbly = 3, soil = 1, falling_node = 0},
 	drop = "livingfloatlands:paleojungle_littler_leaves",
@@ -794,8 +795,8 @@ minetest.register_node("livingfloatlands:paleojungle_littler_leaves", {
 			octaves = 7,
 			persist = 1,
 		},
-		y_max = 31000,
-		y_min = 1000,
+		y_max = 3100,
+		y_min = 0,
 		decoration = "livingfloatlands:paleojungle_littler_dirt"
 	})
 
@@ -813,7 +814,7 @@ minetest.register_node("livingfloatlands:paleojungle_littler_leaves", {
 			octaves = 8,
 			persist = 1,
 		},
-		y_max = 31000,
-		y_min = 1000,
+		y_max = 3100,
+		y_min = 0,
 		decoration = "livingfloatlands:paleojungle_littler_leaves"
 	})

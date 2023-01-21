@@ -1,10 +1,13 @@
+local S = minetest.get_translator("livingfloatlands")
+
 mobs:register_mob("livingfloatlands:gigantopithecus", {
 	stepheight = 3,
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
 	group_attack = true,
-	attack_animals = true,
+	attack_animals = false,
+	attack_npcs = false,
         attack_monsters = true,
 	owner_loyal = true,
 	reach = 3,
@@ -31,8 +34,9 @@ mobs:register_mob("livingfloatlands:gigantopithecus", {
 	jump = false,
 	jump_height = 3,
 	pushable = true,
-	follow = {"default:apple", "farming:potato", "farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread", "ethereal:banana_single", "livingfloatlands:giantforest_oaknut"},
+	follow = {"default:apple", "farming:potato", "farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread", "ethereal:banana_single", "livingfloatlands:giantforest_oaknut", "farming:melon_8", "farming:pumpkin_8", "ethereal:strawberry", "farming:blackberry", "naturalbiomes:blackberry", "naturalbiomes:cowberry", "naturalbiomes:banana", "naturalbiomes:banana_bunch", "farming:blueberries", "ethereal:orange", "livingdesert:figcactus_fruit", "livingfloatlands:paleojungle_clubmoss_fruit", "ethereal:banana", "livingdesert:date_palm_fruits", "farming:melon_slice", "naturalbiomes:wildrose", "naturalbiomes:banana"},
 	view_range = 10,
+        stay_near = {{"livingfloatlands:giantforest_grass", "livingfloatlands:giantforest_grass2", "livingfloatlands:giantforest_grass3"}, 5},
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
 	        {name = "mobs:leather", chance = 1, min = 0, max = 2},
@@ -51,10 +55,9 @@ mobs:register_mob("livingfloatlands:gigantopithecus", {
 		punch_speed = 100,
 		punch_start = 150,
 		punch_end = 250,
-
-		die_start = 1, -- we dont have a specific death animation so we will
-		die_end = 2, --   re-use 2 standing frames at a speed of 1 fps and
-		die_speed = 1, -- have mob rotate when dying.
+		die_start = 150,
+		die_end = 250,
+		die_speed = 50,
 		die_loop = false,
 		die_rotate = true,
 	},
@@ -62,7 +65,7 @@ mobs:register_mob("livingfloatlands:gigantopithecus", {
 
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 0, 5, 50, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 5, 5, false, nil) then return end
 	end,
 })
 
@@ -75,11 +78,12 @@ if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:gigantopithecus",
 	nodes = {"livingfloatlands:giantforest_litter"},
+	neighbors = {"livingfloatlands:giantforest_paleooak_trunk"},
 	min_light = 0,
 	interval = 60,
 	active_object_count = 2,
-	chance = 8000, -- 15000
-	min_height = 1000,
+	chance = 2000, -- 15000
+	min_height = 5,
 	max_height = 31000,
 })
 end

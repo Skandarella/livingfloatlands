@@ -1,4 +1,3 @@
-
 default.register_leafdecay({
 	trunks = {"livingfloatlands:giantforest_paleoredwood_trunk"},
 	leaves = {"livingfloatlands:giantforest_paleoredwood_leaves"},
@@ -8,7 +7,7 @@ default.register_leafdecay({
 default.register_leafdecay({
 	trunks = {"livingfloatlands:coldsteppe_pine_trunk"},
 	leaves = {"livingfloatlands:coldsteppe_pine_leaves", "livingfloatlands:coldsteppe_pine_pinecone"},
-	radius = 6
+	radius = 5
 })
 
 default.register_leafdecay({
@@ -20,7 +19,7 @@ default.register_leafdecay({
 default.register_leafdecay({
 	trunks = {"livingfloatlands:coldsteppe_pine3_trunk"},
 	leaves = {"livingfloatlands:coldsteppe_pine3_leaves", "livingfloatlands:coldsteppe_pine3_pinecone"},
-	radius = 6
+	radius = 5
 })
 
 default.register_leafdecay({
@@ -32,7 +31,7 @@ default.register_leafdecay({
 default.register_leafdecay({
 	trunks = {"livingfloatlands:paleodesert_joshua_trunk"},
 	leaves = {"livingfloatlands:paleodesert_joshua_leaves"},
-	radius = 6
+	radius = 3
 })
 
 default.register_leafdecay({
@@ -50,12 +49,12 @@ default.register_leafdecay({
 default.register_leafdecay({
 	trunks = {"livingfloatlands:paleojungle_conifere_trunk"},
 	leaves = {"livingfloatlands:paleojungle_conifere_leaves"},
-	radius = 6
+	radius = 8
 })
 
 default.register_leafdecay({
 	trunks = {"livingfloatlands:paleojungle_paleopalm_trunk"},
 	leaves = {"livingfloatlands:paleojungle_paleopalm_leaves"},
-	radius = 6
+	radius = 3
 })
 

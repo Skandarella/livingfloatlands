@@ -1,3 +1,5 @@
+local S = minetest.get_translator("livingfloatlands")
+
 mobs:register_mob("livingfloatlands:tyrannosaurus", {
 	type = "monster",
 	passive = false,
@@ -8,7 +10,7 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 	hp_min = 300,
 	hp_max = 550,
 	armor = 100,
-	collisionbox = {-1.2, -0.01, -1.0, 1.2, 1.5, 1.0},
+	collisionbox = {-1.0, -0.01, -1.0, 1.0, 3.0, 1.0},
 	visual = "mesh",
 	mesh = "Tyrannosaurus4.b3d",
 	visual_size = {x = 1.0, y = 1.0},
@@ -36,7 +38,9 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 	lava_damage = 4,
 	light_damage = 0,
 	fear_height = 3,
+        knock_back = false,
         pathfinding = true,
+        stay_near = {{"livingfloatlands:paleojungle_litter_leaves", "livingfloatlands:paleojungle_smallpalm", "livingfloatlands:giantforest_grass3", "livingfloatlands:paleojungle_ferngrass"}, 6},
 	animation = {
 		speed_normal = 30,
 		stand_start = 250,
@@ -49,12 +53,16 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 		punch_speed = 100,
 		punch_start = 100,
 		punch_end = 200,
-		-- 50-70 is slide/water idle
+		die_start = 100,
+		die_end = 200,
+		die_speed = 50,
+		die_loop = false,
+		die_rotate = true,
 	},
 
 	follow = {
 		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical",
-		"mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw"
+		"mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw", "mobs:meatblock_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw", "livingfloatlands:largemammalraw", "livingfloatlands:theropodraw", "livingfloatlands:sauropodraw", "animalworld:raw_athropod", "animalworld:whalemeat_raw", "animalworld:rabbit_raw", "nativevillages:chicken_raw", "mobs:meat_raw", "animalworld:pork_raw", "people:mutton:raw"
 	},
 	view_range = 20,
 
@@ -63,7 +71,7 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 		-- feed or tame
 		if mobs:feed_tame(self, clicker, 4, false, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 5, 50, 80, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 0, 1, false, nil) then return end
 	end,
 })
 
@@ -76,11 +84,12 @@ if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:tyrannosaurus",
 	nodes = {"livingfloatlands:paleojungle_litter"},
+	neighbors = {"livingfloatlands:paleojungle_smallpalm"},
 	min_light = 0,
 	interval = 60,
 	active_object_count = 1,
-	chance = 8000, -- 15000
-	min_height = 1000,
+	chance = 2000, -- 15000
+	min_height = 3,
 	max_height = 31000,
 
 })

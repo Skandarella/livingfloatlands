@@ -1,3 +1,5 @@
+local S = minetest.get_translator("livingfloatlands")
+
 mobs:register_mob("livingfloatlands:cavebear", {
 	type = "animal",
 	passive = false,
@@ -26,6 +28,8 @@ mobs:register_mob("livingfloatlands:cavebear", {
 	jump = false,
         jump_height = 6,
 	stepheight = 3,
+        knock_back = false,
+        stay_near = {{"livingfloatlands:coldsteppe_shrub", "livingfloatlands:coldsteppe_grass", "livingfloatlands:coldsteppe_grass2", "livingfloatlands:coldsteppe_grass3", "livingfloatlands:coldsteppe_grass4"}, 6},
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
 	},
@@ -43,7 +47,11 @@ mobs:register_mob("livingfloatlands:cavebear", {
 		punch_speed = 60,
 		punch_start = 250,
 		punch_end = 350,
-		-- 50-70 is slide/water idle
+		die_start = 250,
+		die_end = 350,
+		die_speed = 50,
+		die_loop = false,
+		die_rotate = true,
 	},
 
 	follow = {
@@ -57,7 +65,7 @@ mobs:register_mob("livingfloatlands:cavebear", {
 		-- feed or tame
 		if mobs:feed_tame(self, clicker, 4, false, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 5, 50, 80, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 5, 15, false, nil) then return end
 	end,
 })
 
@@ -70,14 +78,15 @@ if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:smilodon",
 	nodes = {"livingfloatlands:coldsteppe_litter"},
+	neighbors = {"livingfloatlands:coldsteppe_shrub"},
 	min_light = 0,
 	interval = 60,
-	chance = 8000, -- 15000
+	chance = 2000, -- 15000
 	active_object_count = 1,
-	min_height = 1000,
+	min_height = 5,
 	max_height = 31000,
 
 })
 end
 
-mobs:register_egg("livingfloatlands:cavebear", ("Cave Bear"), "acavebear.png")
+mobs:register_egg("livingfloatlands:cavebear", S("Cave Bear"), "acavebear.png")

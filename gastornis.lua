@@ -1,3 +1,5 @@
+local S = minetest.get_translator("livingfloatlands")
+
 mobs:register_mob("livingfloatlands:gastornis", {
 stepheight = 2,
 	type = "animal",
@@ -32,6 +34,7 @@ stepheight = 2,
 	run_velocity = 3,
 	jump = true,
         jump_height = 6,
+        stay_near = {{"livingfloatlands:giantforest_grass", "livingfloatlands:giantforest_grass2", "livingfloatlands:giantforest_grass3"}, 5},
 	runaway = true,
         runaway_from = {"animalworld:bear", "animalworld:crocodile", "animalworld:tiger", "animalworld:spider", "animalworld:spidermale", "animalworld:shark", "animalworld:hyena", "animalworld:kobra", "animalworld:monitor", "animalworld:snowleopard", "animalworld:volverine", "livingfloatlands:deinotherium", "livingfloatlands:carnotaurus", "livingfloatlands:lycaenops", "livingfloatlands:smilodon", "livingfloatlands:tyrannosaurus", "livingfloatlands:velociraptor"},
 	drops = {
@@ -48,7 +51,7 @@ stepheight = 2,
 		stand_end = 100,
 		stand1_start = 1,
 		stand1_end = 100,
-		speed_walk = 75,
+		walk_speed = 75,
 		walk_start = 100,
 		walk_end = 200,
 		speed_run = 100,
@@ -57,6 +60,11 @@ stepheight = 2,
 		speed_punch = 50,
 		punch_start = 200,
 		punch_end = 300,
+		die_start = 200,
+		die_end = 300,
+		die_speed = 50,
+		die_loop = false,
+		die_rotate = true,
 	},
 	follow = {
 		"farming:seed_wheat", "farming:seed_cotton", "farming:seed_barley",
@@ -68,7 +76,7 @@ stepheight = 2,
 
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 30, 50, 80, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 0, 15, false, nil) then return end
 	end,
 
 })
@@ -82,11 +90,12 @@ if not mobs.custom_spawn_livingfloatlands then
 mobs:spawn({
 	name = "livingfloatlands:gastornis",
 	nodes = {"livingfloatlands:giantforest_litter"},
+	neighbors = {"livingfloatlands:giantforest_paleoredwood_trunk", "livingfloatlands:giantforest_paleooak_trunk"},
 	min_light = 0,
 	interval = 60,
-	chance = 8000, -- 15000
+	chance = 2000, -- 15000
 	active_object_count = 2,
-	min_height = 1000,
+	min_height = 5,
 	max_height = 31000,
 	day_toggle = true,
 })

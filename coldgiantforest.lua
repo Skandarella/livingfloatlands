@@ -1,3 +1,5 @@
+local S = minetest.get_translator("livingfloatlands")
+
 local modname = "livingfloatlands"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
@@ -15,7 +17,7 @@ minetest.register_biome({
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
     y_max = 31000,
-    y_min = 1000,
+    y_min = 0,
     heat_point = 47,
     humidity_point = 66,
 })
@@ -35,7 +37,7 @@ end
 
 -- paleo redwood trunk
 minetest.register_node("livingfloatlands:giantforest_paleoredwood_trunk", {
-	description = ("Paleo Redwood Trunk"),
+	description = S("Paleo Redwood Trunk"),
 	tiles = {
 		"livingfloatlands_giantforest_paleoredwood_trunk_top.png",
 		"livingfloatlands_giantforest_paleoredwood_trunk_top.png",
@@ -49,7 +51,7 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_trunk", {
 
 -- paleo redwood wood
 minetest.register_node("livingfloatlands:giantforest_paleoredwood_wood", {
-	description = ("Paleo Redwood Wood"),
+	description = S("Paleo Redwood Wood"),
 	tiles = {"livingfloatlands_giantforest_paleoredwood_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -62,7 +64,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingfloatlands:giantforest_paleoredwood_leaves", {
-  description = ("Paleo Redwood Leaves"),
+  description = S("Paleo Redwood Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -70,7 +72,7 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_leaves", {
   special_tiles = {"livingfloatlands_giantforest_paleoredwood_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, winleafdecay = 3, flammable = 2, leaves = 1},
   drop = {
     max_items = 1,
     items = {
@@ -92,7 +94,7 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_leaves", {
 })
 
 minetest.register_node("livingfloatlands:giantforest_paleoredwood_sapling", {
-  description = ("Paleo Redwood Sapling"),
+  description = S("Paleo Redwood Sapling"),
   drawtype = "plantlike",
   tiles = {"livingfloatlands_giantforest_paleoredwood_sapling.png"},
   inventory_image = "livingfloatlands_giantforest_paleoredwood_sapling.png",
@@ -132,8 +134,8 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_sapling", {
       "livingfloatlands:giantforest_paleoredwood_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_giantforest_paleoredwood_wood.png"},
-      ("Paleo Redwood Stair"),
-      ("Paleo Redwood Slab"),
+      S("Paleo Redwood Stair"),
+      S("Paleo Redwood Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -142,15 +144,15 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_sapling", {
       "livingfloatlands:giantforest_paleoredwood_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingfloatlands_giantforest_paleoredwood_trunk_top.png", "livingfloatlands_giantforest_paleoredwood_trunk_top.png", "livingfloatlands_giantforest_paleoredwood_trunk.png"},
-      ("Paleo Redwood Trunk Stair"),
-      ("Paleo Redwood Trunk Slab"),
+      S("Paleo Redwood Trunk Stair"),
+      S("Paleo Redwood Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingfloatlands:gate_paleoredwood_wood",
     {
-      description = ("Paleo Redwood Wood Fence Gate"),
+      description = S("Paleo Redwood Wood Fence Gate"),
       texture = "livingfloatlands_giantforest_paleoredwood_wood.png",
       material = "livingfloatlands:giantforest_paleoredwood_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -162,7 +164,7 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_sapling", {
 default.register_fence(
   "livingfloatlands:fence_paleoredwood_wood",
   {
-    description = ("Paleo Redwood Fence"),
+    description = S("Paleo Redwood Fence"),
     texture = "livingfloatlands_giantforest_paleoredwood_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingfloatlands_giantforest_paleoredwood_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingfloatlands_giantforest_paleoredwood_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -175,7 +177,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingfloatlands:fence_rail_paleoredwood_wood",
   {
-    description = ("Paleo Redwood Fence Rail"),
+    description = S("Paleo Redwood Fence Rail"),
     texture = "livingfloatlands_giantforest_paleoredwood_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingfloatlands_giantforest_paleoredwood_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -196,7 +198,7 @@ minetest.register_decoration({
     fill_ratio = 0.00235,
     biomes = {"livingfloatlands:coldgiantforest"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleoredwood_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -211,7 +213,7 @@ minetest.register_decoration({
     fill_ratio = 0.00147,
     biomes = {"livingfloatlands:coldgiantforest"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 2,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleoredwood_treemush.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -226,7 +228,7 @@ minetest.register_decoration({
     fill_ratio = 0.00141,
     biomes = {"livingfloatlands:coldgiantforest"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleoredwood_tree2.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -241,7 +243,7 @@ minetest.register_decoration({
     fill_ratio = 0.00090,
     biomes = {"livingfloatlands:coldgiantforest"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 2,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleoredwood_tree2mush.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -256,7 +258,7 @@ minetest.register_decoration({
     fill_ratio = 0.00085,
     biomes = {"livingfloatlands:coldgiantforest"},
     y_max = 31000,
-    y_min = 1000,
+    y_min = 1,
     schematic = minetest.get_modpath("livingfloatlands").."/schematics/giantforest_paleoredwood_treegiant.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
@@ -271,7 +273,7 @@ minetest.register_decoration({
     fill_ratio = 0.00028,
 		biomes = {"livingfloatlands:coldgiantforest"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 2,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_giantforest_rottenwood2.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
@@ -286,7 +288,7 @@ minetest.register_decoration({
     fill_ratio = 0.00028,
 		biomes = {"livingfloatlands:coldgiantforest"},
 		y_max = 31000,
-		y_min = 1000,
+		y_min = 2,
 		schematic = minetest.get_modpath("livingfloatlands") .. "/schematics/livingfloatlands_giantforest_rottenwood3.mts",
 		flags = "place_center_x, place_center_z",
     rotation = "random",
